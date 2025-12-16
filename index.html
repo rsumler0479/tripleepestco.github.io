@@ -196,7 +196,7 @@
                     <div class="content-outer">
                         <div class="content-box justify-content-center">
                             <div class="inner text-center">
-                                <h1><span class="txt"> Protecting Your Business From </span><br> Unwanted Pests.</h1>
+                                <h1>Protecting Your <span id="dynamic-business" style="display:inline-block; min-width:120px; transition:opacity 0.5s;">Business</span> From Unwanted Pests.</h1>
                                 <div class="text">Experience the difference for your commercial property—contact us now.</div>
                                 <div class="link-box">
                                     <a href="#" class="theme-btn btn-style-one"><span>Schedule Commercial Services</span></a>
@@ -992,6 +992,25 @@
 
 <script src="Pestico/assets/js/script.js"></script>
 
+<script>
+// Dynamic business type effect
+(function() {
+  var words = ["restaurants", "hospitals", "multifamilies", "stores", "office buildings"];
+  var el = document.getElementById("dynamic-business");
+  var i = 0;
+  function cycle() {
+    el.style.opacity = 0;
+    el.style.color = '#ADD8E6'; // light blue
+    el.style.fontWeight = 'bold';
+    setTimeout(function() {
+      el.textContent = words[i];
+      el.style.opacity = 1;
+      i = (i + 1) % words.length;
+    }, 500);
+  }
+  setInterval(cycle, 4000);
+})();
+</script>
 
 </body>
 </html>
